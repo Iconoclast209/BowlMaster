@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour {
 
     public float launchVelocity = 3f;
+    public bool isInMotion = false;
     private Rigidbody rig;
     private AudioSource audioSource;
 
@@ -18,6 +19,7 @@ public class Ball : MonoBehaviour {
 
     public void Launch(Vector3 velocity)
     {
+        isInMotion = true;
         rig.useGravity = true;
         rig.velocity = velocity;
         audioSource.Play();
