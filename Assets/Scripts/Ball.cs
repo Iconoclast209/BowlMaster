@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
 
     public float launchVelocity = 3f;
     public bool isInMotion = false;
+    public Vector3 ballSpawnPosition;
     private Rigidbody rig;
     private AudioSource audioSource;
 
@@ -25,8 +26,15 @@ public class Ball : MonoBehaviour {
         audioSource.Play();
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
+    public void Reset()
+    {
+        print("Reset Ball.");
+        isInMotion = false;
+        rig.velocity = Vector3.zero;
+        rig.angularVelocity = Vector3.zero;
+        rig.rotation = Quaternion.identity;
+        rig.useGravity = false;
+        transform.position = ballSpawnPosition;
+        
+    }
 }

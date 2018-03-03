@@ -5,16 +5,17 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
     public GameObject ball;
+    public Vector3 cameraSpawnPosition = new Vector3(0, 50, -50);
+    public Vector3 offset = new Vector3(0, 50, -50);
 
-    private Vector3 offset;
     private Camera camera;
 
-	// Use this for initialization
-	void Start () {
+
+    void Start()
+    {
         camera = GetComponent<Camera>();
-        camera.transform.position = new Vector3(0, 50, -50);
-        offset = new Vector3(0, 50, -50);
-	}
+        camera.transform.position = cameraSpawnPosition + offset;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,7 +23,11 @@ public class CameraController : MonoBehaviour {
         {
             camera.transform.position = ball.transform.position + offset;
         }
-        //Otherwise the Camera will stop moving near headpin
-        
+        //Otherwise the Camera will stop moving near headpin  
 	}
+
+    public void Reset()
+    {
+        camera.transform.position = cameraSpawnPosition + offset;
+    }
 }

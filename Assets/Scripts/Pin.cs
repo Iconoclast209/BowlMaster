@@ -12,29 +12,21 @@ public class Pin : MonoBehaviour {
         IsStanding();
     }
 
-    private void Update()
-    {
-
-    }
-
     public bool IsStanding()
     {
         Vector3 rotationInEuler = transform.rotation.eulerAngles;
 
         float xTilt = Mathf.Abs(rotationInEuler.x);
         float zTilt = Mathf.Abs(rotationInEuler.z);
-        print(this.name +" "+ xTilt + ", " + zTilt);
-        
+                
         if (xTilt < standingThreshold || xTilt > (360 - standingThreshold))
         {
             if (zTilt < standingThreshold || zTilt > (360 - standingThreshold))
             {
-                print("true");
                 return true;
-
             }
         }
-        print("false");
+      
         return false;
         
     }
