@@ -8,9 +8,11 @@ public class PinSetter : MonoBehaviour {
     public Text pinStandingCountText;
     public bool ballEnteredBox = false;
     public int lastStandingCount=-1;
+    public float distanceToRaise = 40f;
 
     private Ball ball;
     private CameraController mainCamera;
+    private Animator animator;
     private Pin[] pinArray;
     private float lastChangeTime;
     
@@ -19,6 +21,7 @@ public class PinSetter : MonoBehaviour {
         CountStanding();
         ball = FindObjectOfType<Ball>();
         mainCamera = FindObjectOfType<CameraController>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -102,4 +105,59 @@ public class PinSetter : MonoBehaviour {
         }
     }
 
+    public void ResetPins()
+    {
+        animator.SetTrigger("resetTrigger");
+    }
+
+    public void TidyUpPins()
+    {
+        animator.SetTrigger("tidyTrigger");
+    }
+
+    public void RaisePins()
+    {
+        pinArray = FindObjectsOfType<Pin>();
+
+        foreach (Pin p in pinArray)
+        {
+            if (p.IsStanding())
+            {
+                Rigidbody rb = p.GetComponent<Rigidbody>();
+                rb.useGravity = false;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                float newXPos = p.transform.position.x;
+                float newYPos = p.transform.position.y + distanceToRaise;
+                float newZPos = p.transform.position.z;
+                p.transform.position = new Vector3(newXPos, newYPos, newZPos);
+            }
+        }
+    }
+
+    public void LowerPins()
+    {
+        pinArray = FindObjectsOfType<Pin>();
+
+        foreach (Pin p in pinArray)
+        {
+            if (p.IsStanding())
+            {
+                Rigidbody rb = p.GetComponent<Rigidbody>();
+                float newXPos = p.transform.position.x;
+                float newYPos = p.transform.position.y - distanceToRaise;
+                float newZPos = p.transform.position.z;
+                p.transform.position = new Vector3(newXPos, newYPos, newZPos);
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.useGravity = true;
+            }
+        }
+        
+    }
+
+    public void RenewPins()
+    {
+        print("Renewing Pins.");
+    }
 }
