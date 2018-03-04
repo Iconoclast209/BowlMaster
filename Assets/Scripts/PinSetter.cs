@@ -11,7 +11,7 @@ public class PinSetter : MonoBehaviour {
     public float distanceToRaise = 40f;
 
     private Ball ball;
-    private CameraController mainCamera;
+    private CameraController mainCameraController;
     private Animator animator;
     private Pin[] pinArray;
     private float lastChangeTime;
@@ -20,7 +20,7 @@ public class PinSetter : MonoBehaviour {
     {
         CountStanding();
         ball = FindObjectOfType<Ball>();
-        mainCamera = FindObjectOfType<CameraController>();
+        mainCameraController = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
     }
 
@@ -58,9 +58,8 @@ public class PinSetter : MonoBehaviour {
         ballEnteredBox = false;
         lastStandingCount = -1;
         ball.Reset();
-        mainCamera.Reset();
+        mainCameraController.Reset();
     }
-
 
     public int CountStanding()
     {
@@ -153,11 +152,11 @@ public class PinSetter : MonoBehaviour {
                 rb.useGravity = true;
             }
         }
-        
     }
 
     public void RenewPins()
     {
         print("Renewing Pins.");
+        //Create 10 new pins in the proper location.
     }
 }
