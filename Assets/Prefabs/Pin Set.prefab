@@ -512,6 +512,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4634862376886032}
+  - component: {fileID: 114452448819170130}
   m_Layer: 0
   m_Name: Pin Set
   m_TagString: Untagged
@@ -1618,9 +1619,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64088284098314884
@@ -1632,9 +1633,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64220765600788658
@@ -1646,9 +1647,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64315168717387640
@@ -1660,9 +1661,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64872965937272110
@@ -1674,9 +1675,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64884178022668716
@@ -1688,9 +1689,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64895648336313616
@@ -1702,9 +1703,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64942404148199672
@@ -1716,9 +1717,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64987367603503878
@@ -1730,9 +1731,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!64 &64997170132388702
@@ -1744,9 +1745,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Convex: 1
-  m_InflateMesh: 0
+  m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300002, guid: 9e6c34afdfdafec45ae1144af683e7d9, type: 3}
 --- !u!114 &114173475882116824
@@ -1761,6 +1762,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114185440887113084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1773,6 +1775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114273603300120832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1785,6 +1788,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114375169032408026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1797,6 +1801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114442251644565130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1809,6 +1814,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
+--- !u!114 &114452448819170130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1963946002708066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58d643fbd11920845bb6807900017958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114491246035390938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1821,6 +1838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114507204554442614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1833,6 +1851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114805891690586806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1845,6 +1864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114943371456194168
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1857,6 +1877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40
 --- !u!114 &114975683360404884
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1869,3 +1890,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standingThreshold: 5
+  distanceToRaise: 40

@@ -19,7 +19,7 @@ public class PinSetter : MonoBehaviour {
     
     private void Start()
     {
-        CountStanding();
+        CountStandingAndUpdateDisplay();
         ball = FindObjectOfType<Ball>();
         mainCameraController = FindObjectOfType<CameraController>();
         animator = GetComponent<Animator>();
@@ -35,7 +35,7 @@ public class PinSetter : MonoBehaviour {
 
     void CheckStanding()
     {
-        int currentStanding = CountStanding();
+        int currentStanding = CountStandingAndUpdateDisplay();
 
         if(currentStanding != lastStandingCount)
         {
@@ -48,8 +48,7 @@ public class PinSetter : MonoBehaviour {
         if((Time.time - lastChangeTime) > settleTime)
         {
             PinsHaveSettled();
-        }
-            
+        }            
     }
     
     void PinsHaveSettled()
@@ -62,7 +61,7 @@ public class PinSetter : MonoBehaviour {
         mainCameraController.Reset();
     }
 
-    public int CountStanding()
+    public int CountStandingAndUpdateDisplay()
     {
         int pinsStanding = 0;
         pinArray = FindObjectsOfType<Pin>();
@@ -91,7 +90,7 @@ public class PinSetter : MonoBehaviour {
     {
         if (other.gameObject.GetComponent<Ball>())
         {
-            CountStanding();
+            CountStandingAndUpdateDisplay();
             Invoke("CountStanding", 2f);
             return;
         }
@@ -137,8 +136,6 @@ public class PinSetter : MonoBehaviour {
 
     public void RenewPins()
     {
-        print("Renewing Pins.");
-        //Create 10 new pins in the proper location.
         Instantiate(pinSetPrefab, pinSetSpawnPosition, Quaternion.identity);
     }
 }
