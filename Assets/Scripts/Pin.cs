@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pin : MonoBehaviour {
+public class Pin : MonoBehaviour
+{
 
     [Tooltip("The amount in degrees that the pin can be off of the X and Z axes and still be considered standing upright")]
     public float standingThreshold = 5f;
+    public float distanceToRaise = 40f;
 
     private void Start()
     {
@@ -28,6 +30,37 @@ public class Pin : MonoBehaviour {
         }
       
         return false;
+    }
+
+    public void Raise()
+    {
+        if(IsStanding())
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            float newXPos = transform.position.x;
+            float newYPos = transform.position.y + distanceToRaise;
+            float newZPos = transform.position.z;
+            transform.position = new Vector3(newXPos, newYPos, newZPos);
+        }
+    }
+
+    public void Lower()
+    {
+        if (IsStanding())
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            float newXPos = transform.position.x;
+            float newYPos = transform.position.y - distanceToRaise;
+            float newZPos = transform.position.z;
+            transform.position = new Vector3(newXPos, newYPos, newZPos);
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+            rb.useGravity = true;
+        }
         
     }
+
 }

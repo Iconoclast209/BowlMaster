@@ -922,6 +922,16 @@ Prefab:
       propertyPath: pinStandingCountText
       value: 
       objectReference: {fileID: 2051903001}
+    - target: {fileID: 114632257367674802, guid: 2fbe8c75c71294a4b9db8344d0fc817d,
+        type: 2}
+      propertyPath: pinSetSpawnPosition.y
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114632257367674802, guid: 2fbe8c75c71294a4b9db8344d0fc817d,
+        type: 2}
+      propertyPath: pinSetSpawnPosition.z
+      value: 1829
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fbe8c75c71294a4b9db8344d0fc817d, type: 2}
   m_IsPrefabParent: 0

@@ -8,7 +8,8 @@ public class PinSetter : MonoBehaviour {
     public Text pinStandingCountText;
     public bool ballEnteredBox = false;
     public int lastStandingCount=-1;
-    public float distanceToRaise = 40f;
+    public GameObject pinSetPrefab;
+    public Vector3 pinSetSpawnPosition;
 
     private Ball ball;
     private CameraController mainCameraController;
@@ -120,17 +121,7 @@ public class PinSetter : MonoBehaviour {
 
         foreach (Pin p in pinArray)
         {
-            if (p.IsStanding())
-            {
-                Rigidbody rb = p.GetComponent<Rigidbody>();
-                rb.useGravity = false;
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                float newXPos = p.transform.position.x;
-                float newYPos = p.transform.position.y + distanceToRaise;
-                float newZPos = p.transform.position.z;
-                p.transform.position = new Vector3(newXPos, newYPos, newZPos);
-            }
+            p.Raise();
         }
     }
 
@@ -140,17 +131,7 @@ public class PinSetter : MonoBehaviour {
 
         foreach (Pin p in pinArray)
         {
-            if (p.IsStanding())
-            {
-                Rigidbody rb = p.GetComponent<Rigidbody>();
-                float newXPos = p.transform.position.x;
-                float newYPos = p.transform.position.y - distanceToRaise;
-                float newZPos = p.transform.position.z;
-                p.transform.position = new Vector3(newXPos, newYPos, newZPos);
-                rb.velocity = Vector3.zero;
-                rb.angularVelocity = Vector3.zero;
-                rb.useGravity = true;
-            }
+            p.Lower();
         }
     }
 
@@ -158,5 +139,6 @@ public class PinSetter : MonoBehaviour {
     {
         print("Renewing Pins.");
         //Create 10 new pins in the proper location.
+        Instantiate(pinSetPrefab, pinSetSpawnPosition, Quaternion.identity);
     }
 }

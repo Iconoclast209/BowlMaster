@@ -194,3 +194,5 @@ MonoBehaviour:
   pinStandingCountText: {fileID: 0}
   ballEnteredBox: 0
   lastStandingCount: -1
+  pinSetPrefab: {fileID: 1963946002708066, guid: 63b91c40231deca4c8ddfe656d9bb377,
+    type: 2}
